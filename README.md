@@ -124,3 +124,7 @@ pure logic from larger services.
   nginx/Caddy in front.
 - **Lithuanian translations** are working drafts, not native-reviewed.
 - **No CI yet.** Tests run locally; nothing wired up to GitHub Actions.
+
+## License
+
+MIT — see [`LICENSE`](LICENSE).
