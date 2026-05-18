@@ -8,7 +8,11 @@ ENV VITE_PB_URL=${VITE_PB_URL}
 
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci
+# `npm install` (not `npm ci`) because npm 10 incorrectly flags some
+# platform-specific optional deps (esbuild/rollup native binaries) as
+# required, which makes `npm ci` fail on platforms different from where
+# the lock file was generated. npm install handles them gracefully.
+RUN npm install --no-audit --no-fund
 
 COPY . .
 RUN npm run build
