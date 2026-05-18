@@ -3,7 +3,7 @@
 # ---------- Stage 1: build the React frontend ----------
 FROM node:22-alpine AS frontend-builder
 
-ARG VITE_PB_URL=https://pitch.agent-start.com
+ARG VITE_PB_URL=https://pitch.agent-startup.com
 ENV VITE_PB_URL=${VITE_PB_URL}
 
 WORKDIR /app

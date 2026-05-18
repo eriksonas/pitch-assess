@@ -5,7 +5,7 @@ services:
     build:
       context: .
       args:
-        VITE_PB_URL: ${VITE_PB_URL:-https://pitch.agent-start.com}
+        VITE_PB_URL: ${VITE_PB_URL:-https://pitch.agent-startup.com}
     image: pitch-assess:latest
     container_name: pitch-assess
     restart: unless-stopped
@@ -24,7 +24,7 @@ services:
       - "traefik.enable=true"
 
       # HTTPS router
-      - "traefik.http.routers.pitchassess.rule=Host(`pitch.agent-start.com`)"
+      - "traefik.http.routers.pitchassess.rule=Host(`pitch.agent-startup.com`)"
       - "traefik.http.routers.pitchassess.entrypoints=websecure"
       - "traefik.http.routers.pitchassess.tls=true"
       - "traefik.http.routers.pitchassess.tls.certresolver=letsencrypt"
@@ -33,7 +33,7 @@ services:
       - "traefik.http.services.pitchassess.loadbalancer.server.port=8090"
 
       # HTTP → HTTPS redirect
-      - "traefik.http.routers.pitchassess-http.rule=Host(`pitch.agent-start.com`)"
+      - "traefik.http.routers.pitchassess-http.rule=Host(`pitch.agent-startup.com`)"
       - "traefik.http.routers.pitchassess-http.entrypoints=web"
       - "traefik.http.routers.pitchassess-http.middlewares=redirect-to-https"
       - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
