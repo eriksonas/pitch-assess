@@ -1,0 +1,17 @@
+.DS_Store
+node_modules
+.idea
+package-lock.json
+/build
+.vscode/
+.idea/
+vite.config.*s.*
+
+# Secrets
+.env
+.env.local
+.env.*.local
+
+# PocketBase
+pocketbase/pocketbase
+pocketbase/pb_data/
