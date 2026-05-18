@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.6
 
 # ---------- Stage 1: build the React frontend ----------
-FROM node:20-alpine AS frontend-builder
+FROM node:22-alpine AS frontend-builder
 
 ARG VITE_PB_URL=https://pitch.agent-start.com
 ENV VITE_PB_URL=${VITE_PB_URL}
