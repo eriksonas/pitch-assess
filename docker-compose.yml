@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  pitchassess:
+    build:
+      context: .
+      args:
+        VITE_PB_URL: ${VITE_PB_URL:-https://pitch.agent-start.com}
+    image: pitch-assess:latest
+    container_name: pitch-assess
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    volumes:
+      # Persist SQLite DB + uploaded files across container recreations.
+      - ./pb_data:/app/pb_data
+
+    networks:
+      - traefik-proxy
+
+    labels:
+      - "traefik.enable=true"
+
+      # HTTPS router
+      - "traefik.http.routers.pitchassess.rule=Host(`pitch.agent-start.com`)"
+      - "traefik.http.routers.pitchassess.entrypoints=websecure"
+      - "traefik.http.routers.pitchassess.tls=true"
+      - "traefik.http.routers.pitchassess.tls.certresolver=letsencrypt"
+
+      # PocketBase HTTP port inside the container
+      - "traefik.http.services.pitchassess.loadbalancer.server.port=8090"
+
+      # HTTP → HTTPS redirect
+      - "traefik.http.routers.pitchassess-http.rule=Host(`pitch.agent-start.com`)"
+      - "traefik.http.routers.pitchassess-http.entrypoints=web"
+      - "traefik.http.routers.pitchassess-http.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+
+networks:
+  traefik-proxy:
+    external: true

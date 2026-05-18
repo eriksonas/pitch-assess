@@ -1,0 +1,18 @@
+# Keep the Docker build context tight.
+.git
+.gitignore
+.dockerignore
+node_modules
+build
+pb_data
+pocketbase/pb_data
+pocketbase/pocketbase
+.env
+.env.*
+!.env.example
+*.log
+.vscode
+.idea
+DEPLOYMENT.md
+README.md
+LICENSE
