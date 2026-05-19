@@ -250,7 +250,7 @@ const AnalyticsDashboard = () => {
       <Header />
       <WorkflowProgress currentStep="analytics" />
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+      <main className="main-content with-progress max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 md:pb-12">
         {/* Page Header */}
         <div className="mb-6 md:mb-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">

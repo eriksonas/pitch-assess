@@ -340,12 +340,18 @@
 
 /* Main Content Layout */
 .main-content {
-  @apply pt-[72px];
-  min-height: calc(100vh - 72px);
+  @apply pt-[96px];
+  min-height: calc(100vh - 96px);
 }
 
 .main-content.with-progress {
-  @apply pt-[144px];
+  @apply pt-[176px];
+}
+
+@media (max-width: 768px) {
+  .main-content.with-progress {
+    @apply pt-[256px];
+  }
 }
 
 /* Assessment Configuration Panel Styles */

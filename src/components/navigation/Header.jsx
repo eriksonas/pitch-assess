@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import Icon from '../AppIcon';
 import Button from '../ui/Button';
+import Logo from '../Logo';
 import { useTranslation } from 'react-i18next';
 
 const Header = () => {
@@ -53,16 +54,12 @@ const Header = () => {
       <header className="header-nav">
         <div className="header-container">
           <div className="header-brand">
-            <button 
+            <button
               onClick={() => navigate('/signin')}
               className="header-logo hover-lift press-scale"
               aria-label="PitchAssess Home"
             >
-              <img 
-                src="/assets/images/BSR_DeepTech_Launch_Logo_Standard-medium_002_-1769691775973.jpg" 
-                alt="BSR DeepTech Launch Logo" 
-                className="h-8 w-auto"
-              />
+              <Logo size={26} className="text-white" />
             </button>
             <h1 className="header-title">{t('header.title')}</h1>
           </div>
@@ -75,16 +72,12 @@ const Header = () => {
     <header className="header-nav">
       <div className="header-container">
         <div className="header-brand">
-          <button 
+          <button
             onClick={handleLogoClick}
             className="header-logo hover-lift press-scale"
             aria-label="PitchAssess Home"
           >
-            <img 
-              src="/assets/images/BSR_DeepTech_Launch_Logo_Standard-medium_002_-1769691775973.jpg" 
-              alt="BSR DeepTech Launch Logo" 
-              className="h-8 w-auto"
-            />
+            <Logo size={26} className="text-white" />
           </button>
           <h1 className="header-title">{t('header.title')}</h1>
         </div>

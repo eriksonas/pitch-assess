@@ -208,7 +208,7 @@ const PitchVersionTracker = () => {
       <Header />
       <WorkflowProgress currentStep="results" />
 
-      <main className="container mx-auto px-4 pt-8 pb-6 md:pt-10 md:pb-8 max-w-7xl">
+      <main className="main-content with-progress container mx-auto px-4 pb-6 md:pb-8 max-w-7xl">
         {/* Page Header */}
         <div className="mb-6 md:mb-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">

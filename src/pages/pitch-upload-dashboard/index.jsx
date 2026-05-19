@@ -181,7 +181,7 @@ const PitchUploadDashboard = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <WorkflowProgress />
-      <main className="main-content with-progress pt-24">
+      <main className="main-content with-progress">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-6 md:py-8 lg:py-12">
           <div className="mb-6 md:mb-8 lg:mb-12">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-3 md:mb-4">

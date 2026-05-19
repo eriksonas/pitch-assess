@@ -125,7 +125,7 @@ const SavedPitches = () => {
       <div className="min-h-screen bg-background">
         <Header />
         <WorkflowProgress currentStep="upload" />
-        <main className="container-wrapper py-12 pt-24">
+        <main className="main-content with-progress container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl pb-12">
           <div className="flex items-center justify-center">
             <div className="text-center">
               <Icon name="Loader2" size={48} className="text-primary animate-spin mx-auto mb-4" />
@@ -141,7 +141,7 @@ const SavedPitches = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <WorkflowProgress currentStep="upload" />
-      <main className="container-wrapper py-6 md:py-8 lg:py-12 pt-24">
+      <main className="main-content with-progress container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl pb-6 md:pb-8 lg:pb-12">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
